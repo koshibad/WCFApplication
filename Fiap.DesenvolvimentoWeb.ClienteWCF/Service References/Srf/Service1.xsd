@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="FiapWCF" elementFormDefault="qualified" targetNamespace="FiapWCF" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Person">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DataNascimento" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sexo" type="tns:Sexos" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Person" nillable="true" type="tns:Person" />
+  <xs:simpleType name="Sexos">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MASCULINO" />
+      <xs:enumeration value="FEMININO" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Sexos" nillable="true" type="tns:Sexos" />
+</xs:schema>
